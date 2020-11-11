@@ -1,0 +1,15 @@
+ <custom chineseName="意见反馈"></custom>
+ <view class="wrap">
+    <view class="card-area">
+        <view class="block-area">
+            <radio-group>
+                <radio bindtap="radioChange" class="block border-bottom" data-value="bug反馈" color="#00BC89" checked>bug反馈</radio>
+                <radio bindtap="radioChange" class="block border-bottom" data-value="功能建议" color="#00BC89">功能建议</radio>
+                <radio bindtap="radioChange" class="block border-bottom" data-value="界面美化" color="#00BC89">界面美化</radio>
+                <radio bindtap="radioChange" class="block border-bottom" data-value="其他" color="#00BC89">其他</radio>
+            </radio-group>
+        </view>
+    </view>
+      <textarea class="opinion" auto-height maxlength="-1" bindinput="bindInput" placeholder='写下你的宝贵意见吧~' />
+      <button type="default" bindtap="submit" class="mini">提交</button>
+</view>

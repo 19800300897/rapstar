@@ -1,0 +1,15 @@
+<!-- index.swan -->
+<view class="login-container">
+    <view class="brand-atmosphere">
+        <image class="app-logo" mode="widthFix" src="{{logoUrl}}"></image>
+        <view class="app-title">{{title}}</view>
+    </view>
+    <view class="functional-part">
+        <block s-for="item in descriptions">
+            <view class="app-description">{{item}}</view>
+        </block>
+    </view>
+    <view class="action-area">
+        <access-btn color="#3388FF" no-border ></access-btn>
+    </view>
+</view>

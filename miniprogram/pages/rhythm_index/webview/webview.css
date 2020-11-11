@@ -1,0 +1,14 @@
+
+
+.tip {
+    text-align: center;
+    padding: .3rem 0 .35rem 0;
+    font-size: .15rem;
+    color: #333;
+}
+
+.btn {
+    line-height: .44rem;
+    font-size: .18rem;
+    margin: 0 .23rem .15rem .23rem;
+}

@@ -1,0 +1,9 @@
+<view class="block-area">
+    <view class="block-title-area">
+        <view class="block-title">{{title}}</view>
+        <slot name="actions"></slot>
+    </view>
+    <view class="block-content-area" style="max-height: {{maxHeight || '100vh'}};">
+        <slot name="content"></slot>
+    </view>
+</view>

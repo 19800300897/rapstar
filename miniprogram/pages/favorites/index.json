@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "我的收藏",
+    "navigationStyle": "custom",
+    "backgroundColorTop": "#f5f5f5",
+    "backgroundColor": "#f5f5f5",
+    "usingComponents": {
+        "custom": "../custom/custom",
+        "topbar": "../components/topbar/topbar",
+        "search-block": "../components/search-block/search-block",
+        "smt-search-bar": "@smt-ui/component/src/search-bar",
+        "smt-icon": "@smt-ui/component/src/icon",
+        "gov-custom-title-bar": "@smt-ui/component-gov/src/custom-title-bar",
+        "gov-list-item": "@smt-ui/component-gov/src/list-item",
+        "gov-icon": "@smt-ui/component-gov/src/icon",
+        "smt-page-status": "@smt-ui/component/src/page-status"
+    }
+}

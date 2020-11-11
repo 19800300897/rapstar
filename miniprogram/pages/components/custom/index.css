@@ -1,0 +1,65 @@
+/* 自定义组件的css，在该自定义组件内部生效 (custom.css) */
+.nav-box {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #f5f5f5;
+    z-index: 99;
+}
+
+.dark {
+    background-color: #3670C2;
+}
+.nav-box.dark .page-title-china {
+    color: #fff;
+}
+.nav-box.dark .page-title-english {
+    color: var(--dark-page-status-desc, rgba(255, 255, 255, .6));
+}
+
+.top-title {
+    height: 53px;
+    font-size: .16rem;
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    z-index: 99;
+}
+
+.page-title-china {
+    text-align: center;
+    font-size: .17rem;
+    color: #000;
+    z-index: 99;
+}
+
+.page-title-english {
+    font-size: .13rem;
+    color: #999;
+    z-index: 99;
+}
+
+.back-icon-wrap {
+    position: absolute;
+    left: .13rem;
+    width: .22rem;
+    height: .22rem;
+    z-index: 99;
+}
+
+.back-icon {
+    width: .22rem;
+    height: .22rem;
+    z-index: 99;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 99;
+}
+.collect{
+    float: right;
+    background-color: #000;
+}

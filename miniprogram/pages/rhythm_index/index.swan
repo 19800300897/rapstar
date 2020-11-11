@@ -1,0 +1,82 @@
+<!-- index.swan -->
+<import src="../components/templates/mode-title.swan" />
+<view class="container" bindtap="containerTap">
+    <topbar
+        title="押韵"
+        color="white"
+        has-back="{{showBack}}"
+        backgroundColor="#74B89C"
+        TextStyle="p"
+        bindnavigateback="navigateBack">
+    </topbar>
+    <view class="search-bar-area">
+        <smt-search-bar class="search-bar"
+            search-icon-color="#999"
+            placeholder="{{searchPlaceholder}}"
+            preset-word="{{searchPresetword}}"
+            value="{=searchValue=}"
+            focus="{=isFocus=}"
+            bindsearch="search"
+            bindclear="clear"
+            bindinput="input"
+            bindfocus="focus"
+            theme="white"/>
+    </view>
+<!---->
+<view class="buttons">
+    <button class="{{isFavor?'noFavor':'Favor' }}"             bindtap="tapChange" size="mini">单押</button>
+    <button class="{{isFavor2 ? 'noFavor' : 'Favor' }}" bindtap="tapChange2" size="mini">双押</button>
+    <button class="{{isFavor3 ? 'noFavor' : 'Favor' }}" bindtap="tapChange3" size="mini">多押</button>
+        <smt-icon bindtap="tapChangeCollect" class="collect" name="collect"  color="#74B89C"></smt-icon>
+</view>
+<view class="wrap">
+            <view class="component-wrap">
+                <smt-checkbox-group
+                    option-key="name"
+                    column="3"
+                    options="{{threeColumnOptions}}"
+                    bind:change="groupChange"
+                    bindlongpress="Longpress"
+                >
+                </smt-checkbox-group>
+            </view>
+</view>
+
+    <view style="padding-bottom: {{isFocus ? keybordHeight : 0 }}px;" class="search-content-area">
+    <view class="suggestion-area swan-security-margin-bottom" s-if="searchValue !== '' && suggestionItems.length > 0">
+        <block s-for="item in suggestionItems">
+            <view
+                class="suggestion-item-container"
+                hover-class="suggestion-item-hover"
+                hover-stay-time="100"
+                bindtap="suggestionTap"
+                data-item="{{item.label}}">
+                <view class="suggestion-item">
+                    <smt-icon name="magnifying-glass" color="#ccc" size="32.61rpx"></smt-icon>
+                    <view class="search-suggestion-item">
+                        <block s-for="text in item.textArr">
+                            <text selectable="false" class="{{text === searchValue ? 'text-highlight' : ''}}">{{text}}</text>
+                        </block>
+                    </view>
+                    <view catchtap="suggestionArrowTap" data-item="{{item.label}}">
+                        <smt-icon name="arrow-top-left" color="#ccc" size="32.61rpx"></smt-icon>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    </view>
+    <view class="search-status-area" s-if="isLoading || showStatus">
+        <smt-page-status
+            class="search-status"
+            loading="{{pageStatus.loading}}"
+            loading-title="{{pageStatus.loadingTitle}}"
+            bind:smtreloading="reloading"
+            title="{{pageStatus.title}}"
+            desc="{{pageStatus.desc}}"
+            icon="{{pageStatus.icon}}"
+            showBtn="{{pageStatus.showBtn}}"
+            btnText="{{pageStatus.btnText}}">
+        </smt-page-status>
+    </view>
+</view>

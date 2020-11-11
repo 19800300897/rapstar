@@ -1,0 +1,126 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    font-family: "Microsoft KaiTi";
+    width: 100%;
+    height: 100%;
+    margin-top: 150rpx;
+  }
+.left {
+    width: 25%;
+    font-size: 30rpx;
+    height: 1500rpx;
+    background-color: #F4F4F4;
+  }
+.left view {
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+  }
+.select {
+    background-color: #ffffff;
+    border-left: 2rpx solid #36AE66;
+    font-weight: bold;
+    color: #36AE66;
+  }
+.normal {
+    background-color: #F4F4F4;
+    border-bottom: 1rpx solid #f2f2f2;
+  }
+.right {
+    width: 75%;
+    margin: 0px;
+    margin-left: 15rpx;
+    margin-right: 15rpx;
+
+  }
+.img{
+    width: 100%;
+}
+
+.str11{
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 30px;
+    padding: 12px 12px 12px 0;
+    word-wrap: break-word;
+    text-align: justify;
+    text-indent: 78rpx;
+    text-align: left;
+    font-family: sans-serif;
+}
+.body{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 100rpx;
+   /* background-color: #f1f1f1;
+    z-index: 1;*/
+}
+.c_title{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    overflow: hidden;
+    height: 120rpx;
+    line-height: 120rpx;
+    background-color: #74B89C;
+    color: #fff;
+    font-size: 40rpx;
+    text-align: center;
+}
+.btn_list{
+    overflow: hidden;
+}
+/* .btn_nav{
+    overflow: hidden;
+    display: inline;
+    float: left;
+    padding: 0 15rpx;
+    background-color: #fff;
+    margin-top: 50rpx;
+    height: 99rpx;
+    line-height: 99rpx;
+    margin-right: 20rpx;
+    border:5rpx solid #ccc;
+    border-radius: 20rpx;
+    font-size: 36rpx;
+
+} */
+swiper-item {
+    overflow: scroll;
+  }
+
+.words{
+    font-size: 12px;
+    text-indent: 78rpx;
+    text-align: left;
+    font-family:sans-serif;
+}
+.bottom{
+    margin-bottom: 100rpx;
+}
+.str12{
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 30px;
+    padding: 12px 12px 12px 0;
+    word-wrap: break-word;
+    text-align: justify;
+    text-indent: 78rpx;
+    text-align: left;
+    font-family: sans-serif;
+}
+.music{
+    overflow: hidden;
+    display: inline;
+    padding: 0 15rpx;
+    background-color: #fff;
+    line-height: 99rpx;
+    margin-right: 20rpx;
+    border:5rpx solid #74B89C;
+    border-radius: 20rpx;
+    font-size: 36rpx;
+}

@@ -1,0 +1,16 @@
+{
+    "navigationBarTitleText": "智能小程序示例",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "topbar": "../components/topbar/topbar",
+        "search-block": "../components/search-block/search-block",
+        "smt-search-bar": "@smt-ui/component/src/search-bar",
+        "smt-icon": "@smt-ui/component/src/icon",
+        "smt-page-status": "@smt-ui/component/src/page-status",
+        "smt-checkbox-group": "@smt-ui/component/src/checkbox-group",
+        "custom": "../components/custom/index",
+        "gov-custom-title-bar": "@smt-ui/component-gov/src/custom-title-bar",
+        "gov-list-item": "@smt-ui/component-gov/src/list-item",
+        "gov-icon": "@smt-ui/component-gov/src/icon"
+    }
+}

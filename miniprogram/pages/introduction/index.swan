@@ -1,0 +1,96 @@
+
+  <view class="content">
+    <gov-custom-title-bar animation show-fixed-bar fixed-title="说唱入门" common-title="说唱入门" fixed-front-color="#ffffff"
+        common-bg-color="#74B89C" common-front-color="#ffffff" common-bg-opacity="{{true}}" switch-start-position="10"
+        switch-end-position="60"></gov-custom-title-bar>
+      <view class='left'>
+          <view class="{{flag==0?'select':'normal'}} " id='0' bindtap='switchNav'>主要风格</view>
+          <view class="{{flag==1?'select':'normal'}}" id='1' bindtap='switchNav'>常用手势</view>
+          <view class="{{flag==2?'select':'normal'}}" id='2' bindtap='switchNav'>常见词汇</view>
+          <view class="{{flag==3?'select':'normal'}}" id='3' bindtap='switchNav'>说唱节奏</view>
+          <view class="{{flag==4?'select':'normal'}}" id='4' bindtap='switchNav'>说唱发声</view>
+          <view class="{{flag==5?'select':'normal'}}" id='5' bindtap='switchNav'>说唱作词</view>
+      </view>
+      <view class='right'>
+          <view class='category'>
+              <swiper current='{{currentTab}}' style="height: {{clientHeight?clientHeight+'px':'auto'}}" vertical="{{true}}">
+                  <swiper-item id='0' catchtouchmove="stopTouchMove">
+    <view class="wrap">
+    <view class="card-area" s-for="item,index in styleItems">
+        <button type="primary" hover-stop-propagation="true" bindtap="primary" data-value="{{index}}" style="font-size:14px;border:2px solid #74B89C;margin-top:6px;width:180px;background-color:white;color:black;">{{item.name}}</button>
+    </view>
+</view>
+
+                  </swiper-item>
+                  <swiper-item id='1' catchtouchmove="stopTouchMove">
+                      <view class="str11"> 掌心朝内的V字手势，在嘻哈圈里的意思为“peace”（和平）& Love中的Peace</view>
+                      <image class="img" mode="widthFix" src="../../common/images/shoushi.png"></image>
+                  </swiper-item>
+                  <swiper-item id='2' catchtouchmove="stopTouchMove">
+                      <scroll-view scroll-y="true" class="bottom" style="height: {{clientHeight?clientHeight+'px':'auto'}}"
+                          bindscrolltolower="scrollbot">
+                        <!--常见词汇-->
+                        <view class="str11" s-for="item,index in wordsItems">
+                          <view style="color:#74B89C">{{item.name}}</view>
+                          <p><span class="words">{{item.label}}</span></p>
+
+                          </view>
+                      </scroll-view>
+                  </swiper-item>
+                  <swiper-item id='3' catchtouchmove="stopTouchMove">
+                   <scroll-view scroll-y="true" style="height: {{clientHeight?clientHeight+'px':'auto'}}"
+                          bindscrolltolower="scrollbot">
+                      <view class="str12">
+                          节奏很重要，特别是理解beat、伴奏的节奏、节拍。如果想要快速入门，不管是否有音乐乐理的基础，去把握beat的节奏还是比较容易的，不一定需要理解4/4拍，多少BPM，你只要能把握住基本的每个鼓点就可以了，尽量让你rap的节奏跟鼓点的节奏合拍。
+                          <br><p style="word-wrap: break-word;">当然如果能把rap的一个段落正好是4个小节最好，那样听起来更美感一点。</p>
+                          了解音乐节拍请点击：<view data-value="音乐节拍" bindtap="tapHandle" class="music">音乐节拍</view>
+                      </view></scroll-view>
+                  </swiper-item>
+                  <swiper-item id='4' catchtouchmove="stopTouchMove">
+                   <scroll-view scroll-y="true" class="bottom" style="height: {{clientHeight?clientHeight+'px':'auto'}}"
+                          bindscrolltolower="scrollbot">
+                      <view class="str12">
+                          <p>rap不同于美声等音乐形式，没有固定定义的发声方法，用真实声音即可。如果觉得自己的声音不太好听，可以阅读以下方法：</p>
+                          <p style="color:#74B89C"> 正确发声的方法:</p>
+                          <p>气息是声音的动力来源。充足、稳定的气息是发音的基础。有的人讲话或唱歌声音洪亮、持久、有力，人们赞叹说，他(她)“中气”很足，相反，有的人说话或唱歌音量很小，有气无力，上气不接下气，像蚊子嗡嗡叫一样，使人难以听清，这种人则“中气”不足。其间除了身体素质的区别外，还有一个气息调节技巧问题，即呼吸和讲话的配合、协调是否恰当的问题。
+                              正常情况下，说话是在呼气时而不是在吸气时间进行的，停顿则是在吸气时进行的。</p>
+                          <p>如果是持续时间较长的讲话或朗诵，必然要求有比平时更强的呼吸循环。
+                              讲话时的正确呼吸方法，应当采用由胸腹式联合呼吸法(也称丹田呼吸法)，即运用小腹收缩，丹田的力量控制呼吸。郭兰英在谈到运用这种呼吸方法时说：“唱歌时小肚子常是硬的，唱的越高就越硬”
+                              胸腹式联合呼吸介于胸式呼吸和腹式呼吸两者之间，是二者的结合。</p>
+                          <p style="color:#74B89C">具体方法如下：</p>
+                          <p>吸气：小腹向内即向丹田收缩，相反，大腹、胸、腰部同时向外扩展，可以感觉到腰带渐紧，前腹和后腰分别向前、后、左、右撑开的力量。用鼻吸气，做到快、静、深。</p>
+                          <p> 呼气：小腹差不多始终要收住，不可放开，使胸、腹部在努力控制下，将肺部储气慢慢放出，均匀地外吐。呼气要用嘴，做到匀、缓、稳。在呼气过程中，语音一个接一个的发出后，组成有节奏的有声语言。
+                          </p>
+                          <p>这种呼吸方法可以使腹部和丹田充满气息，为发音提供充足的“气”，同时，由于小腹向内收缩，胸前向外扩张，以小腹、后腰和后胸为支柱点，为发音提供了充足的“力”。“气”与“力”的融合，为优美的声音奠定了坚实的基础。
+                          </p>
+                          <p> 在讲话过程中，要处理好讲话和呼吸的关系，必须注意： 第一， 尽可能轻松自如，吸气要迅速，呼气要缓慢、均匀，吸入的气量要适中。</p>
+                          <p> 第二，
+                              尽可能在讲话中的自然停顿处换气，不要等讲完一个长句才大呼大吸，显得讲话很吃力。还要根据自己的气量来决定是否用中途不便停顿的长句，不要为了渲染和曾强表达效果而勉为其难地为之。那样，会适得其反。
+                          </p>
+                          <p> 第三， 尽可能时讲话时的姿势有利于呼吸。无论是站姿和还是坐姿，都要抬头舒肩展背，胸部要稍向前倾，小腹自然内收，双脚并立平放。</p>
+                          <p> 1，闻花香：仿佛面前有一盆花香花，深深地吸进其香气，控制一会儿后缓缓吐出。</p>
+                          <p> 2，吹蜡烛：模拟吹灭生日蜡烛，深吸一口气后均匀缓慢地吹，尽可能时间长一点，达到25-30秒为合格。</p>
+                          <p> 3，咬住牙，深吸一口气后，从牙缝中发出“咝-----”声，力求平稳均匀持久。</p>
+                          <p> 4，数数：从一数到十，往复循环，一口气能数多少遍就数多少遍，要数的清晰响亮。</p>
+                          <p> 5，用绕口令或近似绕口令的语句练习气息。如：
+                              出东门，过大桥，大桥底下一树枣儿，拿着杆子去打枣，青的多，红的少。一个枣儿，两个枣儿，三个枣儿，四个枣儿，五个枣儿，六个枣儿，七个枣儿，八个枣儿，九个枣儿，十个枣儿``````这是一个绕口令，一口气说完才算好。
+                          </p>
+                          <p> 开始做练习的时候，中间可以适当换气，练到气息有了控制能力时，逐渐减少换气次数，最后要争取一口气说完，甚至多说几个枣儿。</p>
+                          <p style="text-align:center;"> --来源：网络--</p>
+                      </view></scroll-view>
+                  </swiper-item>
+                  <swiper-item id='5' catchtouchmove="stopTouchMove">
+                      <view class="str12">
+                          <p>作词是一名rapper必备的技能。</p>
+                          <p>1、词汇量很重要，词汇量是所有的基础。这就需要多听、多积累、多练。</p>
+                          <p>2、韵脚是说唱中必不可少的一部分，押韵不止区分单押、双押和多押，还有流行度的区别。一般来说越流行的韵脚越低级，如果在freestyle中用流行韵脚押韵，那么很容易被对手猜中。所以需要平时多练、多积累，到一定程度后生成自己的创意词库。</p>
+                          <p>3、小技巧：语气词可以用于押韵，比如yeah uh yall，但切忌过多使用。</p>
+                        去查韵脚：<view bindtap="goto" class="music">查韵脚</view>
+                      </view>
+                  </swiper-item>
+              </swiper>
+          </view>
+      </view>
+  </view>
+
+

@@ -1,0 +1,42 @@
+<view s-if="loading" class="
+        loading
+        {{loading ? 'skeleton-sweep' : 'skeleton-wrap'}}
+        {{isFullScreen ? 'screen-x' : 'screen'}}"></view>
+<smt-page-status s-elif="{{errStatus}}" class="page-status-hall" icon="{{errs[errStatus].icon}}"
+    title="{{errs[errStatus].title}}" show-btn="{{errs[errStatus].showBtn}}" bind:smtreloading="fetchData">
+</smt-page-status>
+<view class="wrap" s-else>
+    <gov-custom-title-bar animation show-fixed-bar fixed-title="我的" common-title="我的" fixed-front-color="#ffffff"
+        common-bg-color="#74B89C" common-front-color="#ffffff" common-bg-opacity="{{true}}" switch-start-position="10"
+        switch-end-position="60"></gov-custom-title-bar>
+    <view class="main-head" style="padding-top: {{navHeight}}">
+        <view class="main">
+            <view class="user-info" bind:tap="goLogin">
+                <view class="avatar">
+                    <view class="avatar-img">
+                        <open-data type="userAvatarUrl"></open-data>
+                    </view>
+                </view>
+                <view>
+                    <view class="name" s-if="isLogin">
+                            <open-data type="userNickName"></open-data>
+                    </view>
+                    <view class="gologin" s-else>
+                        <text class="gologin-text">立即登录</text>
+                        <gov-icon size="100rpx" name="arrow-right-o" color="#ccc"></gov-icon>
+                    </view>
+                </view>
+            </view>
+            <view class="process">
+
+            </view>
+        </view>
+    </view>
+    <view class="{{isFullScreen ? 'service-full-screen' : ''}}">
+        <view class="service" s-for="val in list" data-name="{{val.name}}" bind:tap="goNextPage">
+            <image class="serv-icon" src="{{val.icon}}"></image>
+            <gov-list-item arrow border label="{{val.name}}" gov-label="label-text ellipsis"
+                gov-list-item="list-item-wrap"></gov-list-item>
+        </view>
+    </view>
+</view>

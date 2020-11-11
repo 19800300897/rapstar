@@ -1,0 +1,133 @@
+@import "../../common/style/index.css";
+.main-head {
+    height: 353.864rpx;
+    background: #74B89C;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 138.64rpx;
+}
+
+.service-full-screen {
+    padding-top: 50.91rpx;
+}
+
+.main {
+    position: relative;
+    left: var(--h-spacing-md, 51px);
+    top: 18.077rpx;
+    height: 344.2rpx;
+    width: 688.41rpx;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 16.642rpx 17.512rpx 0 rgba(0, 0, 0, .05);
+    border-radius: var(--border-radius-md, 30px);
+    padding-top: 47.1rpx;
+    border: 1px solid #fff;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 160rpx;
+    font-size: 14px;
+    border-radius:40%;
+}
+
+.avatar {
+    height: 260rpx;
+    width: 260rpx;
+    margin-left: var(--h-spacing-md, 51px);
+    margin-right: 34.42rpx;
+
+}
+
+.avatar-img {
+    width: 260rpx;
+    height: 260rpx;
+    margin-top: -6.038rpx;
+    border-radius: 50%;
+    clip-path: circle(100rpx at center);
+}
+
+.name {
+    margin-top: 30px;
+    display: inline-block;
+    width: 500rpx;
+    height: 100rpx;
+    line-height: 1.2;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16rpx;
+    font-weight: 700;
+}
+
+.gologin {
+    display: flex;
+    height: 60.386rpx;
+    align-items: center;
+}
+
+.gologin-text {
+    display: inline-block;
+    font-size: var(--font-size-lg, 66px);
+    font-weight: 700;
+}
+
+.process {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 54.348rpx 0 50.724rpx;
+}
+
+.list {
+    text-align: center;
+    width: 25%;
+}
+
+.num {
+    font-size: 43.478rpx;
+    font-weight: 700;
+}
+
+.text {
+    font-size: 19.3px;
+    color: #999;
+}
+
+.service {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    padding-left: var(--h-spacing-md, 51px);
+}
+
+.serv-icon {
+    width: 47.1rpx;
+    height: 47.1rpx;
+    margin-left: 6.642rpx;
+}
+
+.list-item-wrap {
+    width: calc(100vw - 144.927rpx);
+}
+
+.wrap .service .label-text {
+    color: #000;
+    width: 555.79rpx;
+}
+
+.screen-x {
+    background: url(../../common/images/mine/mine-x.png) left top no-repeat;
+    background-size: 100% auto;
+}
+
+.screen {
+    background: url(../../common/images/mine/mine.png) left top no-repeat;
+    background-size: 100% auto;
+}

@@ -1,0 +1,13 @@
+{
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white",
+    "backgroundColorTop": "#f5f5f5",
+    "backgroundColor": "#f5f5f5",
+    "usingComponents": {
+        "gov-custom-title-bar": "@smt-ui/component-gov/src/custom-title-bar",
+        "gov-list-item": "@smt-ui/component-gov/src/list-item",
+        "gov-icon": "@smt-ui/component-gov/src/icon",
+        "smt-page-status": "@smt-ui/component/src/page-status",
+        "custom": "../custom/custom"
+    }
+}

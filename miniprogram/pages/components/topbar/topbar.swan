@@ -1,0 +1,14 @@
+<view style="height:{{topbarHeight}}px;">
+    <view  class="top-holder" style="height:{{topbarHeight}}px;"></view>
+    <view  class="top-bar" style="background: {{backgroundColor}}">
+        <view class="status-bar" style="height: {{statusBarHeight}}px;"></view>
+        <view class="{{isAndroid ? 'top-bar-bottom-android' : 'top-bar-bottom-ios'}}">
+            <view s-if="hasBack" class="{{isAndroid ? 'bar-image-box-android' : 'bar-image-box-ios'}} flex" bindtap="back">
+                <image style="opacity:1" class="bar-image" src="{{backColor==='white'?'../../images/back-white.png':'../../images/back.png'}}"></image>
+            </view>
+            <view s-else style="flex: 1;"></view>
+            <view class="bar-title" style="color: {{color}};">{{title}}</view>
+            <view style="flex: 1;"></view>
+        </view>
+    </view>
+</view>

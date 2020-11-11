@@ -1,0 +1,21 @@
+{
+    "appid": "22866598",
+    "cloudfunctionRoot": "cloudfunctions/",
+    "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+    "condition": {},
+    "host": "baiduboxapp",
+    "preview": {
+        "packageId": 1234083
+    },
+    "projectname": "cloud-demo",
+    "setting": {
+        "urlCheck": true
+    },
+    "smartProgramRoot": "miniprogram/",
+    "swan": {
+        "baiduboxapp": {
+            "swanJsVersion": "3.200.116",
+            "extensionJsVersion": "1.16.2"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "授权登录",
+    "disableScroll": true,
+    "usingComponents": {
+        "access-btn": "../components/access-btn/access-btn"
+    }
+}

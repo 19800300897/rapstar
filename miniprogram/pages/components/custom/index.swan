@@ -1,0 +1,18 @@
+<!-- 自定义组件内部的模板 (custom.swan) -->
+<view class="nav-box  {{theme}}" style="min-height:{{statusBarHeight /100}}rem">
+    <view class="top-title" style="margin-top:{{statusBarHeight /100}}rem">
+        <view class="back-icon-wrap" bindtap="back">
+
+            <image class="back-icon" src="{{theme !== 'dark' ? '/images/back.png' : '/images/back_white.png'}}"></image>
+        </view>
+        <view class="title">
+            <view class="page-title-china">{{chinaName}}</view>
+            <view class="page-title-english">{{engName}}</view>
+        </view>
+    </view>
+</view>
+<view style="padding-top:{{statusBarHeight /100 + 0.53}}rem"></view>
+<!-- custom-component自定义组件 -->
+<view class="collect" bindtap="tapChangeCollect">
+    <slot name="inner"><smt-icon name="collect"  color="#74B89C"></smt-icon></slot>
+</view>

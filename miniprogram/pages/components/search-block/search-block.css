@@ -1,0 +1,13 @@
+/**
+ * @file search-block.css
+ * @author swan
+ */
+
+.block-content-area {
+    display: flex;
+    padding: 0 30.8rpx;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: 10.87rpx 0 35.02rpx 0;
+}

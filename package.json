@@ -1,0 +1,17 @@
+{
+  "name": "rapstar",
+  "version": "1.0.0",
+  "description": "想要成为rapstar吗",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "cd ../../../ && npm run build"
+  },
+  "author": "swan",
+  "license": "ISC",
+  "dependencies": {
+    "@smt-ui/component": "^1.1.77",
+    "@smt-ui/component-gov": "^1.1.30",
+    "swan-server-sdk": "0.0.6"
+  }
+}

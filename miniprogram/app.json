@@ -1,0 +1,49 @@
+{
+    "pages": [
+
+        "pages/rhythm_index/index",
+        "pages/favorites/index",
+        "pages/feedback/index",
+        "pages/mine/index",
+        "pages/index/index",
+
+        "pages/introduction/index",
+
+        "pages/favorites/index",
+        "pages/rhythm_index/webview/webview",
+
+        "pages/us/index"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "RapStar",
+        "backgroundTextStyle": "light"
+    },
+    "tabBar": {
+        "color": "#666",
+        "selectedColor": "#74b89c",
+        "borderStyle": "#D6D6D6",
+        "backgroundColor": "#FFF",
+        "list": [
+            {
+                "pagePath": "pages/rhythm_index/index",
+                "iconPath": "/pages/images/yayun.png",
+                "selectedIconPath": "/pages/images/yayun2.png",
+                "text": "押韵"
+            },
+            {
+                "pagePath": "pages/introduction/index",
+                "iconPath": "/pages/images/rumen.png",
+                "selectedIconPath": "/pages/images/rumen2.png",
+                "text": "入门"
+            },
+            {
+                "pagePath": "pages/mine/index",
+                "iconPath": "/pages/images/mine.png",
+                "selectedIconPath": "/pages/images/mine2.png",
+                "text": "我的"
+            }
+        ]
+    }
+}

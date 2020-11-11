@@ -1,0 +1,8 @@
+<!-- mode-title.swan-->
+<template name="mode-title">
+    <view class="mode-title">
+        <view class="mode-title-line-left"></view>
+        <view class="mode-title-text">{{title}}</view>
+        <view class="mode-title-line-right"></view>
+    </view>
+</template>

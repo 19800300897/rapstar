@@ -1,0 +1,68 @@
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.top-bar-bottom-ios {
+    font-size: .16rem;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+}
+
+.top-bar-bottom-android {
+    font-size: .16rem;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+}
+
+.bar-title {
+    font-family: PingFangSC-Medium;
+    font-weight: 700;
+    font-size: .18rem;
+    color: #000;
+    letter-spacing: 0;
+    text-align: center;
+    flex: 2;
+}
+
+.bar-image-box-android {
+    width: .5rem;
+    height: 38px;
+    line-height: .38rem;
+    padding-top: .05rem;
+    flex: 1;
+}
+
+.bar-image-box-ios {
+    width: .5rem;
+    height: 44px;
+    line-height: 44px;
+    padding-top: .05rem;
+}
+
+.bar-image:active {
+    opacity: 0;
+}
+
+.bar-image {
+    width: .22rem;
+    height: .22rem;
+    margin-left: .2rem;
+}
+
+.bar-image-android {
+    width: .21rem;
+    height: .22rem;
+    margin-left: .2rem;
+}
+
+.flex {
+    flex: 1;
+}

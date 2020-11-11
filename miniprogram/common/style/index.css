@@ -1,0 +1,53 @@
+.page-status-hall {
+    height: 95vh;
+}
+
+.label-text {
+    font-size: var(--font-size-md, 54px);
+}
+
+.desc-text {
+    font-size: var(--font-size-xs, 42px);
+}
+
+.ellipsis {
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hover-class:active {
+    opacity: .5;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.skeleton-sweep::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    height: 100vh;
+    width: 312px;
+    overflow: hidden;
+    opacity: .5;
+    background: linear-gradient(to right,  rgba(255, 255, 255, 0),  #ffffff,  rgba(255, 255, 255, 0));
+    animation: seepmove 1.5s infinite;
+}
+
+@keyframes seepmove {
+    from {
+        left: -312px;
+    }
+    to {
+        left: 100vw;
+    }
+}
