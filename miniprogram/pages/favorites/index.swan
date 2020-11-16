@@ -1,8 +1,8 @@
+     <custom chineseName="我的收藏"></custom>
   <view class="container">
-    <gov-custom-title-bar animation show-fixed-bar fixed-title="我的收藏" common-title="我的收藏" fixed-front-color="#ffffff"
-        common-bg-color="#74B89C" common-front-color="#ffffff" common-bg-opacity="{{true}}" switch-start-position="10"
-        switch-end-position="60"></gov-custom-title-bar>
-    <view style="margin-top:180rpx;"><!--阔开区-->
+   <view class="wrap">
+    <view class="card-area">
+    <view style="margin-top:50rpx;"><!--阔开区-->
     </view>
     <search-block class="contentblock"
         s-if="queryResult.length > 0 ">
@@ -44,8 +44,10 @@
             </block>
         </slot>
     </search-block>
-<view  class="goCollect"><text>去收藏+  </text><image class="img" src="/pages/images/yayun2.png" catchtap="switchTab" ></image></view>
+<!-- <view  class="goCollect"><text>去收藏+  </text><image class="img" src="/pages/images/yayun2.png" catchtap="switchTab" ></image></view>
 <view  class="goCollect">
     <text>返回我的中心  </text>
-    <image class="img"src="/pages/images/mine2.png" catchtap="switchTab2" ></image>
+    <image class="img"src="/pages/images/mine2.png" catchtap="switchTab2" ></image> -->
+   </view>
+   </view>
 </view>

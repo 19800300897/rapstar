@@ -9,46 +9,12 @@ Page({
     /* eslint-enable */
         data: {
                //三个按钮的样式，isfavor意思是有没有按下去
-        isFavor: false,
-        isFavor2: false,
-        isFavor3: false,
-        // 测试结果为“你好”的双押结果
-        threeColumnOptions: [
-            {
-                name: '知道',
-                value: '知道'
-            }, {
-                name: '提高',
-                value: '提高'
-            }, {
-                name: '只要',
-                value: '只要'
-            }, {
-                name: '至少',
-                value: '至少'
-            }, {
-                name: '日报',
-                value: '日报'
-            }, {
-                name: '时报',
-                value: '时报'
-            }, {
-                name: '制造',
-                value: '制造'
-            },
-            {
-                name: '必要',
-                value: '必要'
-            },
-            {
-                name: '医药',
-                value: '医药'
-            }
-        ],
+            isFavor: false,
+            isFavor2: false,
+            isFavor3: false,
             collectId:'',
             userid:'',
-            searchKeyword: false, //从数据库查找keyword
-            queryResult: [],
+            searchKeyword: false, //从数据库查找keywords
             searchPlaceholder: '请输入要查找的字或词',
             searchPresetword: '',
             searchValue: '',
@@ -186,23 +152,29 @@ Page({
      *
      */
     tapChange() {
+        var value = this.data.searchValue;
+        this.startSearch(value,'1');
         this.setData({
-            isFavor: !this.data.isFavor,
+            isFavor: true,
             isFavor2: false,
             isFavor3:false
 
         });
     },
     tapChange2() {
+        var value = this.data.searchValue;
+        this.startSearch(value,'2');
         this.setData({
-            isFavor2: !this.data.isFavor2,
+            isFavor2: true,
             isFavor:false,
             isFavor3:false
         });
     },
     tapChange3() {
+        var value = this.data.searchValue;
+        this.startSearch(value,'x');
         this.setData({
-            isFavor3: !this.data.isFavor3,
+            isFavor3: true,
             isFavor:false,
             isFavor2:false
         });
@@ -229,7 +201,7 @@ Page({
                 }
             });
         }
-        var keyword = "拟好";//模拟keyword数据
+        var keyword = this.data.searchValue;//模拟keyword数据
         this.onQuery(keyword);//查库里有没有关键词
     },
     /**
@@ -362,12 +334,22 @@ Page({
          * 发起搜索
          * @param {string} value 搜索的词语
          */
-        startSearch(value) {
-            console.log("搜索："+value);
+        startSearch(value,num) {
+            if(num == undefined){
+                num = 1;
+                this.setData({
+                    isFavor:true,
+                    isFavor2:false,
+                    isFavor3:false
+                })
+            }
+            var searchResult = [];
+            console.log(this.data.isLoading);
             if (this.data.isLoading) {
                 return;
             }
             this.setData({
+                searchResult:[],
                 showStatus: false,
                 searchValue: value,
                 isLoading: true,
@@ -377,61 +359,81 @@ Page({
                 }
             }, () => {
                 //获取数据
-                swan.request({
-                    url: 'https://pk.342996997.xyz:5000',
-                    header: {
-                        'content-type': 'application/json'
-                    },
-                    method: 'POST',
-                    dataType: 'json',
-                    responseType: 'text',
-                    data: {
-                        inputData: value
-                    },
-                    success: res => {
-                        console.log('request success', res);
-                        swan.showModal({
-                            title: '请求到的数据',
-                            content: JSON.stringify(res.data.data),
-                            showCancel: false
-                        });
-                    },
-                    fail: err => {
-                        swan.showToast({
-                            title: JSON.stringify(err)
-                        });
-                        console.log('request fail', err);
-                    },
-                    complete: () => {
-                        this.setData('loading', false);
-                    }
-                });
                 try {
-                    setTimeout(() => {
-                        // 在还未查询到结果时用户改变了搜索词
-                        if (this.data.searchValue !== value) {
-                            return;
-                        }
-                        if (searchResult.length === 0) {
-                            this.setData({
-                                isLoading: false,
-                                showStatus: true,
-                                pageStatus: {
+                    swan.request({
+                        url: 'https://pk.342996997.xyz/words'+num,
+                        header: {
+                            'content-type': 'application/json'
+                        },
+                        method: 'POST',
+                        dataType: 'json',
+                        responseType: 'json',
+                        data: {
+                            inputData: value
+                        },
+                        success: res => {
+                            //将数组转换为json格式
+                            var arr = res.data;
+                            for(let i = 0; i < arr.length; i++){
+                                var t = {};
+                                t.name = arr[i];
+                                t.value = arr[i];
+                                searchResult.push(t);
+                            }
+                            console.log(searchResult);
+                              if (searchResult.length === 0) {
+                                this.setData({
+                                    searchResult:searchResult,
                                     isLoading: false,
-                                    title: '没有搜索到相关韵脚',
-                                    icon: 'search',
-                                    showBtn: true,
-                                    btnText: '发现更多小程序'
-                                }
-                            });
-                        } else {
-                            this.setData({
-                                isLoading: false,
-                                searchValue: query,
-                                searchResult: [1]
-                            });
+                                    showStatus: true,
+                                    pageStatus: {
+                                        isLoading: false,
+                                        title: '没有搜索到相关韵脚或者搜索词字数有误',
+                                        icon: 'search',
+                                        showBtn: true,
+                                        btnText: '重新输入',
+                                    },
+                                });
+                            } else {
+                                this.setData({
+                                    searchResult:searchResult,
+                                    isLoading: false,
+                                    showStatus:false,
+                                });
+                            }
+                        },
+                        fail: err => {
+                            console.log('request fail', err);
+                        },
+                        complete: () => {
+                            this.setData('loading', false);
                         }
-                    }, 3000);
+                    });
+                    // setTimeout(() => {
+                    //     // 在还未查询到结果时用户改变了搜索词
+                    //     if (searchResult.length === 0) {
+                    //         this.setData({
+                    //             searchResult:searchResult,
+                    //             isLoading: false,
+                    //             showStatus: true,
+                    //             pageStatus: {
+                    //                 isLoading: false,
+                    //                 title: '没有搜索到相关韵脚或者搜索词字数有误',
+                    //                 icon: 'search',
+                    //                 showBtn: true,
+                    //                 btnText: '重新输入',
+                    //             },
+                    //             isFavor3:false,
+                    //             isFavor2:false,
+                    //             isfavor:false
+                    //         });
+                    //     } else {
+                    //         this.setData({
+                    //             isLoading: false,
+                    //             showStatus:false,
+                    //         });
+                    //     }
+                    // }, 3000);
                 } catch (e) {
                     this.setData({
                         isLoading: false,

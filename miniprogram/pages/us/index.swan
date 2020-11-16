@@ -1,3 +1,24 @@
-<view class="container">
-   关于我们
+ <custom chineseName="关于我们"></custom>
+ <view class="wrap">
+        <view class="logo">
+             <image class="app-logo" mode="widthFix" src="/pages/images/logo.png"></image>
+
+          </view>
+        <view class="app-title">{{title}}</view>
+         <view class="app-title">Version:1.0.0</view>
+         <view class="content">
+         <view class="intro"><p>一款为说唱新人科普并提供写词灵感的创作神器，旨在将说唱科普性地向大众传播，让更多的说唱爱好者融入说唱圈。</p></view>
+          <view class="divLine"></view>
+          <view class="w">
+         <view class="wx" bindtap="copy" data-value="AmyT-6">客服微信</view>
+            <view class="wxx" bindtap="copy" data-value="AmyT-6">AmyT-6 ></view>
+            </view>
+        <view class="divLine"></view>
+        <view class="wx" bindtap="copy" data-value="amyisafish@foxmail.com">客服邮箱</view>
+         <view class="wxx" bindtap="copy" data-value="amyisafish@foxmail.com">amyisafish@foxmail.com ></view>
+          <view class="divLine"></view>
+                  <view class="wx" bindtap="copy" data-value="862244671">QQ交流群</view>
+         <view class="wxx" bindtap="copy" data-value="862244671">862244671 ></view>
+        <view class="divLine"></view>
+    </view>
 </view>

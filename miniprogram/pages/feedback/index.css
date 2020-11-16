@@ -116,6 +116,7 @@ textarea {
 }
 .opinion{
     border-color: #74B89C;
+    height: 100px;
 }
 .mini{
   color: white;

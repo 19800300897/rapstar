@@ -2,17 +2,20 @@
     "pages": [
 
         "pages/rhythm_index/index",
-        "pages/favorites/index",
-        "pages/feedback/index",
+        "pages/us/index",
         "pages/mine/index",
+        "pages/favorites/index",
+
+
+        "pages/feedback/index",
+
         "pages/index/index",
 
         "pages/introduction/index",
 
         "pages/favorites/index",
-        "pages/rhythm_index/webview/webview",
+        "pages/rhythm_index/webview/webview"
 
-        "pages/us/index"
     ],
     "window": {
         "navigationBarBackgroundColor": "#ffffff",

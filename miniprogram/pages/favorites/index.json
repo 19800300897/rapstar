@@ -1,7 +1,7 @@
 {
     "navigationBarTitleText": "我的收藏",
     "navigationStyle": "custom",
-    "backgroundColorTop": "#f5f5f5",
+    "backgroundColorTop": "#74B89C",
     "backgroundColor": "#f5f5f5",
     "usingComponents": {
         "custom": "../custom/custom",
