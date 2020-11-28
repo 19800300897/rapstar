@@ -367,20 +367,22 @@ Page({
                         },
                         method: 'POST',
                         dataType: 'json',
-                        responseType: 'json',
+                        responseType: '',
                         data: {
                             inputData: value
                         },
                         success: res => {
+                            console.log(res.statusCode);
                             //将数组转换为json格式
                             var arr = res.data;
+                            console.log(arr);
                             for(let i = 0; i < arr.length; i++){
                                 var t = {};
                                 t.name = arr[i];
                                 t.value = arr[i];
                                 searchResult.push(t);
                             }
-                            console.log(searchResult);
+
                               if (searchResult.length === 0) {
                                 this.setData({
                                     searchResult:searchResult,

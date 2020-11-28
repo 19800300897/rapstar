@@ -1,0 +1,16 @@
+@import '../../common/style/index.css';
+.content {
+    background: #fff;
+}
+
+.btn {
+    height: 105.072rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-md, 54px);
+}
+
+.content .list-wrap .label-text {
+    color: #000;
+}

@@ -1,0 +1,10 @@
+<block>
+
+    <view
+        class="content"
+    >
+        <gov-list top-border s-if="isLogin">
+            <view class="btn" name="content" bind:tap="changeLogin">退出登录</view>
+        </gov-list>
+    </view>
+</block>

@@ -10,6 +10,6 @@
         </block>
     </view>
     <view class="action-area">
-        <access-btn color="#3388FF" no-border ></access-btn>
+        <access-btn color="#74B89C" no-border ></access-btn>
     </view>
 </view>

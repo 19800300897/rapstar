@@ -45,6 +45,7 @@ Page({ // eslint-disable-line
     },
 
     onLoad() {
+        console.log(this.data.isLogin);
         this.setData({
             navHeight: systemInfo.statusBarHeight + systemInfo.navigationBarHeight + 'px'
         });
@@ -91,12 +92,19 @@ Page({ // eslint-disable-line
         });
         return;
     }
+    if (e.currentTarget.dataset.name === '个人设置') {
+        swan.navigateTo({
+            url: '../setting/index'
+        });
+        return;
+    }
     },
 
     /**
      * 获取首页数据
      */
     fetchData() {
+
         getMineList(({code, data}) => {
             let res = {
                 errStatus: '',
@@ -133,15 +141,21 @@ Page({ // eslint-disable-line
      */
     goLogin() {
         if (!this.data.isLogin) {
-            this.setData({
-                isLogin: true
+            swan.navigateTo({
+                // 需要跳转的应用内非 tabBar 的页面的路径 , 路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 ‘path?key=value&key2=value2’。
+                url: '../index/index',
+                // 接口调用成功的回调函数
+                success: res => {
+
+                },
+                // 接口调用失败的回调函数
+                fail: res => {},
+                // 接口调用结束的回调函数（调用成功、失败都会执行）
+                complete: res => {}
             });
-            // 修改登录状态为已登录
-            swan.setStorage({
-                key: STORAGE_IS_LOGIN,
-                data: true
-            });
-            setTabBar('我的');
+
         }
+
+
     }
 });

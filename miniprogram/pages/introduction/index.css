@@ -9,7 +9,7 @@
 .left {
     width: 25%;
     font-size: 30rpx;
-    height: 1500rpx;
+    height: 800rpx;
     background-color: #F4F4F4;
   }
 .left view {
@@ -19,9 +19,9 @@
   }
 .select {
     background-color: #ffffff;
-    border-left: 2rpx solid #36AE66;
+    border-left: 2rpx solid #74b89c;
     font-weight: bold;
-    color: #36AE66;
+    color: #74b89c;
   }
 .normal {
     background-color: #F4F4F4;

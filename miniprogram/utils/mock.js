@@ -22,6 +22,10 @@ export const mineList = {
             name: '关于我们',
             icon: '../../common/images/mine/wdts.png'
         },
+        {
+            name: '个人设置',
+            icon: '../../common/images/mine/setting.png'
+        },
     ]
 };
 

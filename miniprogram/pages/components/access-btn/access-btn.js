@@ -4,12 +4,14 @@
  */
 /* globals Page, Component, swan, getCurrentPages */
 /* eslint-disable */
+import {STORAGE_IS_LOGIN} from '../../../const/storage';
+import {setTabBar} from '../../../utils/base';
 Component({
 /* eslint-enable */
     properties: {
         color: {
             type: String,
-            value: '#46897D'
+            value: '#74B89C'
         },
         width: {
             type: String,
@@ -55,6 +57,21 @@ Component({
             console.log(e);
             // TODO：配合swanjs的Q2非兼容性改动，改用button方式调用getUserInfo
             this.showToast(e.detail.encryptedData ? '已获取用户信息' : '未登录');
+            if(e.detail.encryptedData){
+                //获取用户信息之后
+                this.setData({
+                    isLogin: true
+                });
+                swan.setStorage({
+                    key: STORAGE_IS_LOGIN,
+                    data: true
+                });
+     // 修改登录状态为已登录
+        setTabBar('我的');
+        swan.switchTab({
+            url: '/pages/mine/index'
+        });
+            }
         },
         showToast(msg) {
             swan.showToast({

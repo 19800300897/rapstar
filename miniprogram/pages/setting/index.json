@@ -1,0 +1,9 @@
+{    "navigationBarTitleText": "个人设置",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f5f5f5",
+    "usingComponents": {
+        "gov-list": "@smt-ui/component-gov/src/list",
+        "gov-list-item": "@smt-ui/component-gov/src/list-item",
+        "smt-page-status": "@smt-ui/component/src/page-status"
+    }
+}

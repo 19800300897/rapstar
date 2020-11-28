@@ -13,13 +13,15 @@
         <view class="main">
             <view class="user-info" bind:tap="goLogin">
                 <view class="avatar">
-                    <view class="avatar-img">
+                    <view class="avatar-img"  s-if="isLogin">
                         <open-data type="userAvatarUrl"></open-data>
                     </view>
+                    <image s-else class="avatar-img" src="{{avatarUrl}}" />
                 </view>
                 <view>
                     <view class="name" s-if="isLogin">
                             <open-data type="userNickName"></open-data>
+
                     </view>
                     <view class="gologin" s-else>
                         <text class="gologin-text">立即登录</text>
@@ -39,4 +41,5 @@
                 gov-list-item="list-item-wrap"></gov-list-item>
         </view>
     </view>
+
 </view>
