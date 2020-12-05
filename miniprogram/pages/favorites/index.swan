@@ -1,53 +1,50 @@
-     <custom chineseName="我的收藏"></custom>
-  <view class="container">
-   <view class="wrap">
-    <view class="card-area">
-    <view style="margin-top:50rpx;"><!--阔开区-->
-    </view>
-    <search-block class="contentblock"
-        s-if="queryResult.length > 0 ">
-        <slot slot="content">
-             <!--总的列表。block套block-->
-            <block s-for="item,index in queryResult">
-            <view class="divLine2" s-if="index!=0"></view>
-            <button type="default" size="mini" class="mini-btn">{{item.keyword}}</button>
-                    <slot slot="actions">
-            <view class="history-action-group">
-               <!--view s-if="showActions" catchtap="deleteAll" class="action-delete-all">全部删除</view>-->
-                <view class="action-delete" data="{{item}}" catchtap="showActions">
-                    <smt-icon  name="trash" color="#999" size="32.61rpx"></smt-icon>
-                </view>
+<custom chineseName="我的收藏"></custom>
+<view class="container">
+    <view class="wrap">
+        <view class="card-area">
+            <view style="margin-top:50rpx;">
+                <!--阔开区-->
             </view>
-        </slot>
-            <!--分隔线，不用管-->
-                <view class="divLine"></view>
-                <!--收藏词条的列表-->
-                <block s-for="i,index in item.collectword">
-                <view
-                    class="history-label history-label-{{i.status}}"
-                    hover-class="history-label-hover"
-                    hover-start-time="0"
-                    hover-stay-time="0"
-                    data-status="{{i.status}}"
-                    data-index="{{index}}"
-                    data-value="{{i}}"
-                    catchtap="historyLabelTap"
-                    bindlongpress="historyLableLongpress">{{i}}
-                    <smt-icon
-                        class="icon-delete"
-                        s-if="i.status === 1"
-                        name="delete"
-                        color="#999"
-                        size="21.74rpx"></smt-icon>
-                    </view>
-            </block>
-            </block>
-        </slot>
-    </search-block>
-<!-- <view  class="goCollect"><text>去收藏+  </text><image class="img" src="/pages/images/yayun2.png" catchtap="switchTab" ></image></view>
+            <search-block class="contentblock" s-if="queryResult.length > 0 ">
+                <slot slot="content">
+                    <!--总的列表。block套block-->
+                    <block s-for="item,index in queryResult">
+                        <view class="divLine2" s-if="index!=0"></view>
+                        <button type="default" size="mini" class="mini-btn">{{item.keyword}}</button>
+                        <slot slot="actions">
+                            <view class="history-action-group">
+                                <!--view s-if="showActions" catchtap="deleteAll" class="action-delete-all">全部删除</view>-->
+                                <view class="action-delete" data="{{item}}" catchtap="showActions">
+                                    <smt-icon name="trash" color="#999" size="32.61rpx"></smt-icon>
+                                </view>
+                            </view>
+                        </slot>
+                        <!--分隔线，不用管-->
+                        <view class="divLine"></view>
+                        <!--收藏词条的列表-->
+                        <block s-for="i,index in item.collectword">
+                            <view class="history-label history-label-{{i.status}}" hover-class="history-label-hover"
+                                hover-start-time="0" hover-stay-time="0" data-status="{{i.status}}"
+                                data-index="{{index}}" data-value="{{i}}" catchtap="historyLabelTap"
+                                bindlongpress="historyLableLongpress">{{i}}
+                                <smt-icon class="icon-delete" s-if="i.status === 1" name="delete" color="#999"
+                                    size="21.74rpx"></smt-icon>
+                            </view>
+                        </block>
+                    </block>
+                </slot>
+
+            </search-block>
+            <!-- <view  class="goCollect"><text>去收藏+  </text><image class="img" src="/pages/images/yayun2.png" catchtap="switchTab" ></image></view>
 <view  class="goCollect">
     <text>返回我的中心  </text>
     <image class="img"src="/pages/images/mine2.png" catchtap="switchTab2" ></image> -->
-   </view>
-   </view>
+            <view style="position:fixed;bottom:10rpx;align-items:center;justify-content:center;width: 100%;">
+                <view style=" display:flex;align-items:center;  justify-content:center;"><text style="color:#A9A9A9">Copyright © 想要成为rapstar吗团队</text></view>
+            </view>
+
+        </view>
+
+    </view>
+
 </view>

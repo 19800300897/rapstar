@@ -1,10 +1,10 @@
-<block>
-
-    <view
-        class="content"
-    >
+<view class="wrap">
+    <view class="content">
         <gov-list top-border s-if="isLogin">
             <view class="btn" name="content" bind:tap="changeLogin">退出登录</view>
         </gov-list>
     </view>
-</block>
+    <view style="position:fixed;bottom:10rpx;align-items:center;justify-content:center;width: 100%;">
+        <view style=" display:flex;align-items:center;  justify-content:center;"><text style="color:#A9A9A9">Copyright © 想要成为rapstar吗团队</text></view>
+    </view>
+</view>

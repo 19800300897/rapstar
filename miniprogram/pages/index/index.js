@@ -8,7 +8,7 @@ Page({
 /* eslint-enable */
     data: {
         logoUrl: '/pages/images/logo.png', // logo地址
-        title: 'RapStar', // 小程序名
+        title: '小押的中文说唱押韵工具', // 小程序名
         descriptions: ['想要成为RapStar吗'] // 推广信息
     }
 });

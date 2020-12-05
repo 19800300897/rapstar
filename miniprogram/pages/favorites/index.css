@@ -143,3 +143,8 @@
     text-align: center;
     background-color:#e6e6e6;
 }
+.bottom_text{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}

@@ -14,3 +14,7 @@
 .content .list-wrap .label-text {
     color: #000;
 }
+.wrap{
+    padding-bottom: .5rem;
+    font-size: .16rem;
+}
