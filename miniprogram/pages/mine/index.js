@@ -64,7 +64,12 @@ Page({ // eslint-disable-line
             isLogin
         });
         isLogin = isLogin ? '我的' : '未登录';
-        setTabBar(isLogin);
+        swan.setTabBarItem({
+            index: 3,
+            text: isLogin,
+            iconPath:'/pages/images/mine.png',
+            selectedIconPath:'/pages/images/mine2.png'
+        })
     },
 
     /**

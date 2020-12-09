@@ -34,21 +34,21 @@ swan-wrapper {
 .page-body {
     margin-top: .42rem;
 }
-
+/*
 .title {
-    font-size: .15rem;
+    font-size: .19rem;
     color: #666;
     margin: .3rem .22rem .18rem .22rem;
-}
+} */
 
-.input {
+/* .input {
     box-sizing: content-box;
     margin: 0 22.67px .15rem;
     height: .38rem;
     line-height: .38rem;
     font-size: .18rem;
     padding-left: .1rem;
-}
+} */
 
 .page-title {
     margin: 1rem 0 .3rem 0;

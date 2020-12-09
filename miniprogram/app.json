@@ -6,9 +6,9 @@
         "pages/mine/index",
         "pages/favorites/index",
         "pages/setting/index",
-
+        "pages/product/index",
         "pages/feedback/index",
-
+        "pages/editor/index",
         "pages/index/index",
 
         "pages/introduction/index",
@@ -36,17 +36,25 @@
                 "text": "押韵"
             },
             {
+                "pagePath": "pages/product/index",
+                "iconPath": "/pages/images/note.png",
+                "selectedIconPath": "/pages/images/note2.png",
+                "text": "写词"
+            },
+            {
                 "pagePath": "pages/introduction/index",
                 "iconPath": "/pages/images/rumen.png",
                 "selectedIconPath": "/pages/images/rumen2.png",
                 "text": "入门"
             },
+
             {
                 "pagePath": "pages/mine/index",
                 "iconPath": "/pages/images/mine.png",
                 "selectedIconPath": "/pages/images/mine2.png",
                 "text": "我的"
             }
+
         ]
     }
 }

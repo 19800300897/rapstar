@@ -8,18 +8,25 @@
   }
 .left {
     width: 25%;
-    font-size: 30rpx;
-    height: 800rpx;
+    font-size: 35rpx;
+    height: 900rpx;
     background-color: #F4F4F4;
+    display: flex;
+    flex-direction:column ;
+    justify-content:center;
+    align-items:center;
+    text-align: center;
   }
 .left view {
     text-align: center;
-    height: 100rpx;
+    height: 150rpx;
     line-height: 100rpx;
+    width: 190rpx;
+
   }
 .select {
     background-color: #ffffff;
-    border-left: 2rpx solid #74b89c;
+    border-left: 10rpx solid #74b89c;
     font-weight: bold;
     color: #74b89c;
   }

@@ -1,0 +1,41 @@
+<!--pages/editor/editor.wxml-->
+<view class="container fullScreen">
+  <image class="backgroundView" src="{{bgImg}}" />
+  <view class="formWrap"
+    bindtap="closeDialog"
+  >
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <input class="title" type="text" maxlength="20"
+        placeholder="为你的词起个名字吧" name="title"  disabled="{{isSave}}"
+        value="{{thisNoteData.title}}"
+      />
+      <textarea placeholder="在此创作歌词" name="textarea"
+        disabled="{{isSave}}"
+        value="{{thisNoteData.textarea}}"
+      />
+      <button form-type="submit" class="{{isSave ? 'hide' : ''}}">保存</button>
+    </form>
+  </view>
+  <view class="footer">
+    <image src="/images/send.png"
+     bindtap="openShare" />
+     <image src="/images/setting.png"
+     bindtap="setting" />
+    <image src="/images/delete.png"
+      bindtap="delete"
+    />
+    <image src="/images/edit.png"
+      bindtap="edit"
+    />
+  </view>
+  <view class="changeBg {{showDialog ? 'dialog_show' : ''}}">
+    <scroll-view class="scroll_view" scroll-x>
+      <view class="itemList scroll_item"
+        s-for="{{bgImgList}}"
+        s-for-key="{{item.index}}"
+      >
+        <image src="{{item.img}}" data-index="{{index}}" bindtap="choseBg"/>
+      </view>
+    </scroll-view>
+  </view>
+</view>

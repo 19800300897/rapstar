@@ -1,0 +1,125 @@
+
+.addNote {
+    position: fixed;
+    right: 50rpx;
+    bottom: 50rpx;
+    box-shadow: 0 10px 30px #74b89c;
+    border-radius: 50%;
+  }
+
+  .addNote icon {
+    display: block;
+    transform: rotate(45deg);
+  }
+
+  .noteView {
+    width: 100%;
+  }
+
+  .noNote {
+    text-align: center;
+    margin-top: 200rpx;
+  }
+
+  .noteList {
+    height: 88vh;
+  }
+  .view_bottom {
+    margin-bottom: 80rpx;
+  }
+  .listItem {
+    padding: 10px 20px;
+    background-color: transparent;
+  }
+
+  .listItem {
+    border-top: 1rpx solid #dddddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .listItem:first-child {
+    border-top: none;
+    margin-top: 0;
+  }
+
+  .title {
+    color: black;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .date {
+    color: #aaaaaa;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .footer {
+    background-color: white;
+    height: 40rpx;
+    line-height: 40rpx;
+  }
+
+  .notQuery {
+    width:40rpx;
+    height:40rpx;
+    border:3rpx solid #ddd;
+    border-radius: 50%;
+  }
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+     font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-box-pack: justify;
+  }
+
+  .fullScreen {
+    font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      box-sizing: border-box;
+  }
+
+  .backgroundView {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -2;
+  }
+
+  .hide {
+    display: none!important;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 10px;
+  }

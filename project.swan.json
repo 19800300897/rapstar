@@ -5,9 +5,14 @@
     "condition": {},
     "host": "baiduboxapp",
     "preview": {
-        "packageId": 1265940
+        "packageId": 1293517
     },
     "projectname": "rapstar",
+    "publish": {
+        "hideTips": true,
+        "tips": [],
+        "version": "1.0.1"
+    },
     "setting": {
         "urlCheck": true
     },

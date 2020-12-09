@@ -1,0 +1,6 @@
+{
+
+    "navigationBarTitleText": "写词",
+      "usingComponents": {
+    "custom": "../custom/custom"
+}}

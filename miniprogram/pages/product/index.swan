@@ -1,0 +1,40 @@
+
+<view class="container fullScreen">
+  <image class="backgroundView"  />
+  <view class="noteView">
+    <!-- 便签目录 -->
+    <view class="noNote" s-if="{{!noteList.length}}">
+      什么都没有呢，点击右下角开始写词吧~
+    </view>
+    <scroll-view class="noteList {{isSesing ? 'view_bosom' : ''}}" scroll-y
+     s-if="{{noteList.length}}"
+    >
+      <view class='listItem'
+        s-for="{{noteList}}"
+        s-key="{{item.date}}"
+        data-index="{{index}}"
+        bindtap="itemTap"
+        bindlongpress="showSetting"
+      >
+        <view>
+          <view class="title">{{item.title}}</view>
+          <view class="date">{{item.date}}</view>
+        </view>
+        <view class="checkbox {{!isSetting ? 'hide' : ''}}">
+          <icon type="success" size="20" class="{{!isQuery[index].value ? 'hide' : ''}}"/>
+          <view class="notQuery {{isQuery[index].value ? 'hide' : ''}}"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="addNote {{isSetting ? 'hide' : ''}}"
+    bindtap="addNote"
+  >
+    <icon type="clear" size="40" color="#74b89c" />
+  </view>
+  <view class="footer {{!isSetting ? 'hide' : ''}}">
+    <view class="cancel" bindtap="cancel">取消</view>
+    <view class="allQuery" bindtap="allQuery">全选</view>
+    <view class="delate" bindtap="delatePrompt">删除</view>
+  </view>
+</view>
