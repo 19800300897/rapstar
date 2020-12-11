@@ -10,19 +10,26 @@
   }
 
   textarea {
-    height: 600rpx;
-    border-bottom: 2px solid white;
+    font-family:'STXingkai';
+    height: 800rpx;
     margin-bottom: 20px;
+    line-height: 150%;
+    text-align: center;
   }
 
   .title {
-    font-size: .19rem;
+    text-align: center;
+    font-size: .24rem;
     width: 100%;
+    font-family:'STXingkai';
     margin: 30rpx auto;
     padding: 50rpx auto;
     border-bottom: 2px solid white;
   }
-
+  .copyright{
+      margin-bottom: 120rpx;
+      opacity:0.2;
+  }
   .footer image {
     width: 80rpx;
     height: 80rpx;
@@ -84,53 +91,6 @@
     right: 0;
     bottom: 0;
     z-index: 10;
-  }
-  .shengcheng{
-    width: 80%;
-    height: 80%;
-    position: fixed;
-    top: 50rpx;
-    left: 50%;
-    margin-left: -40%;
-    z-index: 10;
-  }
-  .baocun{
-    display: block;
-    width: 80%;
-    height: 70rpx;
-    padding: 0;
-    line-height: 70rpx;
-    text-align: center;
-    position: fixed;
-    bottom: 90rpx;
-    left: 10%;
-    color: #fff;
-    font-size: 32rpx;
-    border-radius: 24rpx;
-    background: rgb(249, 205,173);
-
-  }
-  button[class="baocun"]::after{
-    border: 0;
-  }
-  .quxiao{
-    display: block;
-    width: 60%;
-    height: 70rpx;
-    padding: 0;
-    line-height: 70rpx;
-    text-align: center;
-    position: fixed;
-    bottom: 90rpx;
-    left: 60%;
-    color: #fff;
-    font-size: 32rpx;
-    border-radius: 24rpx;
-    background: rgb(131, 175,155);
-
-  }
-  button[class="quxiao"]::after{
-    border: 0;
   }
   .mask{
     margin-top: 800px;

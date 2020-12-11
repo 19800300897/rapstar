@@ -16,14 +16,25 @@ Page({
     maskHidden: false,
     bgImgList: [
     {'img': '/images/back1.jpg'},
-    {'img':'/images/back7.jpg'},
-    {'img':'/images/back8.jpg'},
-    {'img':'/images/back9.jpg'},
-    {'img':'/images/back5.jpg'},
-    {'img':'/images/back6.jpg'},
-    {'img': '/images/back2.jpg'},
-    {'img':'/images/back3.jpg'},
-    {'img':'/images/back4.jpg'}
+    {'img':'cloud://rapstar-v9111nnk/back3.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back4.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back5.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back6.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back7.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back8.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back9.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back10.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back11.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back12.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back13.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back14.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back15.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back16.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back17.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back18.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back19.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back20.jpg'},
+    {'img':'cloud://rapstar-v9111nnk/back21.jpg'},
     ],
     bgImg: '/images/back1.jpg'
   },
@@ -122,7 +133,7 @@ Page({
           _this.delateThisNote(_this.data.noteIndex)
           //console.log(123)
           swan.switchTab({
-            url: '../index/index'
+            url: '../product/index'
           })
           //console.log(136)
         } else if (res.cancel) {
@@ -178,8 +189,8 @@ Page({
 
 openShare() {
     swan.openShare({
-        title: '智能小程序示例',
-        content: '世界很复杂，百度更懂你',
+        title: '小押的中文说唱押韵工具',
+        content: '想要成为rapstar吗',
         path: 'swan-api/open-share/open-share?key=value',
         imageUrl: 'https://smartprogram.baidu.com/docs/img/logo_new.png',
         success: res => {

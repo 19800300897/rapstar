@@ -38,7 +38,8 @@ Page({
         db.collection('opinions').add({
           data: {
            opinion:opinion,
-           content:content
+           content:content,
+           time:new Date().toLocaleString()
           },
           success: res => {
             swan.showModal({

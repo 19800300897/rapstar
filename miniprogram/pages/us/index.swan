@@ -5,7 +5,7 @@
 
           </view>
         <view class="app-title">{{title}}</view>
-         <view class="app-title">Version:1.0.0</view>
+         <view class="app-title">Version:1.0.2</view>
          <view class="content">
          <view class="intro"><p>一款为说唱新人科普并提供写词灵感的创作神器，旨在将说唱科普性地向大众传播，让更多的说唱爱好者融入说唱圈。</p></view>
           <view class="divLine"></view>

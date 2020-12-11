@@ -16,6 +16,7 @@
       <button form-type="submit" class="{{isSave ? 'hide' : ''}}">保存</button>
     </form>
   </view>
+  <!-- <view class="copyright">@<open-data type="userNickName"></open-data></view> -->
   <view class="footer">
     <image src="/images/send.png"
      bindtap="openShare" />
