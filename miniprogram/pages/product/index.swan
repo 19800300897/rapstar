@@ -6,7 +6,7 @@
     <view class="noNote" s-if="{{!noteList.length}}">
       什么都没有呢，点击右下角开始写词吧~
     </view>
-    <scroll-view class="noteList {{isSesing ? 'view_bosom' : ''}}" scroll-y
+    <scroll-view class="noteList {{isSetting ? 'view_bosom' : ''}}" scroll-y
      s-if="{{noteList.length}}"
     >
       <view class='listItem'

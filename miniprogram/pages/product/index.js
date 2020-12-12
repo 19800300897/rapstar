@@ -1,5 +1,6 @@
 //index.js
-
+const app = getApp();
+const db = swan.cloud.database();
 Page({
     data: {
       noteList: [],
@@ -8,6 +9,26 @@ Page({
     },
     onLoad: function () {
       // 获取本地数据进行展示
+      db.collection('note').where({
+        _cbd_author_id:app.globalData.userid,
+    }).get({
+      success: res => {//没有数据继续执行，有数据跳到update执行
+        if(res.data.length > 0)//如果有数据
+        {
+            swan.setStorageSync('ishave',true)
+            console.log(res.data[0].noteData)
+           swan.setStorageSync('noteData',res.data[0].noteData)//拿数据
+           swan.setStorageSync('resid',res.data[0]._id)//拿id
+        }
+        else{
+            swan.setStorageSync('ishave',false)
+        }
+        console.log('[数据库] [查询记录] 成功: ')
+      },
+      fail: err => {
+        console.error('[数据库] [查询记录] 失败：', err)
+      }
+    })
     },
     onShow(){
       this.setData({
@@ -102,13 +123,19 @@ Page({
       this.setData({
         noteList: swan.getStorageSync('noteData')
       })
+      //数据库也要删除
+      let resid = swan.getStorageSync('resid')
+      db.collection('note').doc(resid).update({
+        data: {
+            noteData:data
+        },
+        success: res => {
+            console.log('note更新成功，记录 _id: ', res._id)
+          },
+          fail: err => {
+            console.error('note更新失败：', err)
+          }
+      })
       this.cancel()
     },
-    onShareAppMessage: function () {
-      return {
-        title: '字节笔记',
-        imageUrl: '/images/share.jpg',
-        path: '/pages/index/index'
-      }
-    }
   })

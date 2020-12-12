@@ -1,7 +1,8 @@
 // pages/editor/editor.js
-const util = require('../../utils/util.js')
+const app = getApp();
+const util = require('../../utils/util.js');
 const canvasContext = swan.createCanvasContext('mycanvas');
-
+const db = swan.cloud.database();
 Page({
 
   /**
@@ -52,6 +53,7 @@ Page({
         thisNoteData: data
       })
     }
+    console.log("数据库有吗"+swan.getStorageSync('ishave'))
   },
 
   /**
@@ -89,13 +91,32 @@ Page({
       })
       return
     }
-    if (this.data.isOldNote) {
+    if (this.data.isOldNote) {//如果是从首页点进来的，先删除原来的
       this.delateThisNote(this.data.noteIndex)
     }
     formData.date = util.formatTime(new Date())
     let noteData = swan.getStorageSync('noteData') || []
     noteData.unshift(formData)
     swan.setStorageSync('noteData', noteData)
+    if(!swan.getStorageSync('ishave')){//之前没有记录，创建
+        db.collection('note').add({
+            data: {
+              noteData:noteData
+            },
+            success: res => {
+              console.log('note成功，记录 _id: ', res._id)
+              swan.setStorageSync('resid',res._id)//现在有记录了，存上
+            },
+            fail: err => {
+              console.error('note失败：', err)
+            }
+          })
+          swan.setStorageSync('ishave',true)//现在有了
+    }
+    else{//之前有数据，update
+        let resid = swan.getStorageSync('resid')
+        this.update(noteData, resid)
+    }
     this.setData({
       isSave: true
     })
@@ -105,13 +126,26 @@ Page({
       duration: 2000
     })
   },
+  update(noteData, resid){//不空白加笔记、不空白更改笔记，都是update
+    db.collection('note').doc(resid).update({
+        data: {
+            noteData:noteData
+        },
+        success: res => {
+            console.log('note更新成功，记录 _id: ', res._id)
+          },
+          fail: err => {
+            console.error('note更新失败：', err)
+          }
+      })
+  },
   getThisNote(index){
     let data = swan.getStorageSync('noteData')
     return data[index]
   },
   delateThisNote(index) {
     let data = swan.getStorageSync('noteData')
-    data.splice(index, 1)
+    data.splice(index, 1)//删除了
     swan.setStorageSync('noteData', data)
   },
   edit(){
@@ -178,13 +212,6 @@ Page({
       bgImg: swan.getStorageSync('backgroundImg')
     })
     this.closeDialog()
-  },
-  onShareAppMessage: function () {
-    return {
-      title: '字节笔记',
-      imageUrl: '/images/share.jpg',
-      path: '/pages/index/index'
-    }
   },
 
 openShare() {

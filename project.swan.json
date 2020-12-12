@@ -5,13 +5,13 @@
     "condition": {},
     "host": "baiduboxapp",
     "preview": {
-        "packageId": 1302316
+        "packageId": 1302790
     },
     "projectname": "rapstar",
     "publish": {
         "hideTips": true,
         "tips": [],
-        "version": "1.0.2"
+        "version": "1.0.3"
     },
     "setting": {
         "urlCheck": true
@@ -19,8 +19,8 @@
     "smartProgramRoot": "miniprogram/",
     "swan": {
         "baiduboxapp": {
-            "extensionJsVersion": "1.15.3",
-            "swanJsVersion": "3.200.116"
+            "extensionJsVersion": "1.18.3",
+            "swanJsVersion": "3.220.19"
         }
     }
 }
